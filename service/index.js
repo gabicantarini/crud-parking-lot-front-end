@@ -1,5 +1,5 @@
 
-const url = "https://localhost:8000"
+const url = "http://127.0.0.1:5500"
 // ------------- POST ----------------------
 const postVeiculo = (objetoCliente) => {
     console.log("objetoCliente: ", JSON.stringify(objetoCliente))
