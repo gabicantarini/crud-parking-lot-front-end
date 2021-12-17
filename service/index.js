@@ -1,21 +1,22 @@
 
-const url = "http://127.0.0.1:5500"
+const url = "http://localhost:8000"
 // ------------- POST ----------------------
 const postVeiculo = (objetoCliente) => {
     console.log("objetoCliente: ", JSON.stringify(objetoCliente))
     return fetch(url + "/vehicles", {
         method: "POST",
         headers: {
+            
             "Content-Type": "application/json"
         },
         body: JSON.stringify(objetoCliente) 
     }).then((response) => {
        if(response.status != 200){
-           console.log(`Erro no servidor: ${response.status}`)
+           console.log("Erro no servidor: ${response.status}")
        }else {
-           alert(`Sucesso ao salvar: ${response.status}`)
+           alert("Sucesso ao salvar: ${response.status}")
        }
-    })
+    });
 }
 
 const postCheckin = (label) => {
@@ -31,7 +32,7 @@ const postCheckin = (label) => {
        }else {
            return response.json()
        }
-    })
+    });
 }
 
 
@@ -40,11 +41,11 @@ const getVeiculo = () => {
     return fetch(url + "/vehicles")
     .then((response) => {
         if(response.status != 200){
-            console.log(`Erro no servidor: ${response.status}`)
+            console.log("Erro no servidor: ${response.status}")
         }else {
             return response.json()
         }
-     })
+     });
 }
 
 const getActivities = () => {
@@ -55,7 +56,7 @@ const getActivities = () => {
         }else {
             return response.json()
         }
-     })
+     });
 }
 //------------ PUT -------------------------------
 
@@ -72,7 +73,7 @@ const putVeiculo = (objetoCliente, id) => {
        }else {
           return response.json()
        }
-    })
+    });
 }
 
 const putCheckout = (objeto) => {
@@ -88,7 +89,7 @@ const putCheckout = (objeto) => {
        }else {
            return response.json()
        }
-    })
+    });
 }
 
 // -------------- DELETE -------------------
@@ -101,7 +102,7 @@ const deletaVeiculo = (id) => {
        }else {
           return response.json()
        }
-    })
+    });
 }
 
 //organiação da exportação
